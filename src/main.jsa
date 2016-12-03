@@ -1,0 +1,149 @@
+import Vue from 'vue'
+import VueResource from 'vue-resource'
+import VueRouter from 'vue-router'
+import Gxt from './components/Gxt.vue'
+
+Vue.use(VueResource)
+Vue.use(VueRouter)
+
+Vue.config.debug = true
+
+var Router = new VueRouter({})
+
+Router.map({
+  '/home': {
+    name: '/home',
+    component: function (resolve) {
+      require(['./components/home/Home.vue'], resolve)
+    }
+  },
+  '/industry': {
+    name: '/industry',
+    component: function (resolve) {
+      require(['./components/industry/Industry.vue'], resolve)
+    },
+    'subRoutes': {
+      '/': {
+        name: '/industry/indexName',
+        component: function (resolve) {
+          require(['./components/industry/echarts.vue'], resolve)
+        }
+      },
+      '/:subName': {
+        name: '/industry/subName',
+        component: function (resolve) {
+          require(['./components/industry/echarts.vue'], resolve)
+        }
+      }
+    }
+  },
+  '/industry/list': {
+    name: '/industry/list',
+    component: function (resolve) {
+      require(['./components/industry/list.vue'], resolve)
+    }
+  },
+  // 知己比
+  '/peer': {
+    name: '/peer',
+    component: function (resolve) {
+      require(['./components/peer/Peer.vue'], resolve)
+    }
+  },
+  '/peer/list': {
+    name: '/peer/list',
+    component: function (resolve) {
+      require(['./components/peer/List.vue'], resolve)
+    }
+  },
+  '/peer/ContrastForBrand': {
+    name: '/peer/ContrastForBrand',
+    component: function (resolve) {
+      require(['./components/peer/ContrastForBrand.vue'], resolve)
+    }
+  },
+  '/peer/ContrastForProduct': {
+    name: '/peer/ContrastForProduct',
+    component: function (resolve) {
+      require(['./components/peer/ContrastForProduct.vue'], resolve)
+    }
+  },
+  '/peer/ContrastForStore': {
+    name: '/peer/ContrastForStore',
+    component: function (resolve) {
+      require(['./components/peer/ContrastForStore.vue'], resolve)
+    }
+  },
+  '/peer/contrast': {
+    name: '/peer/contrast',
+    component: function (resolve) {
+      require(['./components/peer/Contrast.vue'], resolve)
+    }
+  },
+  '/peer/contrastDetails': {
+    name: '/peer/ContrastDetails',
+    component: function (resolve) {
+      require(['./components/peer/ContrastDetails.vue'], resolve)
+    }
+  },
+  '/account': {
+    name: '/account',
+    component: function (resolve) {
+      require(['./components/account/Account.vue'], resolve)
+    }
+  },
+  '/account/accountIntroduce/:id': {
+    name: '/account/accountIntroduce',
+    component: function (resolve) {
+      require(['./components/account/AccountIntroduce.vue'], resolve)
+    }
+  },
+  '/account/changePassword': {
+    name: '/account/changePassword',
+    component: function (resolve) {
+      require(['./components/account/ChangePassword.vue'], resolve)
+    }
+  },
+  '/account/myConcern': {
+    name: '/account/myConcern',
+    component: function (resolve) {
+      require(['./components/account/myConcern.vue'], resolve)
+    }
+  },
+  '/brand': {
+    name: '/home/brand',
+    component: function (resolve) {
+      require(['./components/home/Brand.vue'], resolve)
+    }
+  },
+  '/store': {
+    name: '/home/store',
+    component: function (resolve) {
+      require(['./components/home/Store.vue'], resolve)
+    }
+  },
+  '/product': {
+    name: '/home/product',
+    component: function (resolve) {
+      require(['./components/home/Product.vue'], resolve)
+    }
+  },
+  '/user': {
+    name: '/home/user',
+    component: function (resolve) {
+      require(['./components/home/User.vue'], resolve)
+    }
+  },
+  '/login': {
+    name: '/login',
+    component: function (resolve) {
+      require(['./components/login.vue'], resolve)
+    }
+  }
+})
+
+Router.redirect({
+  '*': '/home'
+})
+
+Router.start(Gxt, '#app')

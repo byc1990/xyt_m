@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<meta http-equiv="content-Type" content="text/html;charset=UTF-8"/>
+	<meta name="format-detection" content="telephone=no" />
+    <title>xyt_m_h</title>
+  </head>
+  <body>
+	<div id="app">
+	  <header>
+	  	<ul>
+	  		<li v-for='(item, index) in tools'  v-bind:class="{curPage : item.isCur}" @click='toolClick(index)'><a>{{item.name}}</a></li>
+	  		<!--<li><router-link to="/products">产品与服务</router-link></li>
+	  		<li><router-link to="/successCase">成功案例</router-link></li>
+	  		<li><router-link to="/news">新闻资讯</router-link></li>
+	  		<li><router-link to="/partner">合作伙伴</router-link></li>
+	  		<li><router-link to="/about">关于我们</router-link></li>-->
+	  	</ul>
+	  </header>
+	  <div class="tel"><span class="info i_1">信宜通--专注信息化人才培养</span><span class="info i_2">咨询热线:</span><span class="info i_3">400-188-8888</span></div>
+	  <router-view></router-view>
+	</div>
+	
+    <!-- built files will be auto injected -->
+  </body>
+</html>

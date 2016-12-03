@@ -1,0 +1,29 @@
+#app{
+	min-width: 1002px;
+}
+header{
+	background: rgb(255,255,255);
+	height: auto;
+	width: 100%;
+	position: relative;padding-bottom: 4px;
+}
+header ul{
+	width: 50%;
+    height: 5rem;
+    line-height: 5rem;
+    position: relative;
+    margin-left: 50%;
+}
+header ul li{display: inline-block;text-align: center;width: 13%;min-width: 80px;margin-right: 3px;box-sizing: border-box;
+}
+header ul li:hover{border-bottom: 4px solid rgb(203,203,203);}
+header ul .curPage:hover{border-bottom: 4px solid rgb(88,139,218);}
+header ul .curPage{border-bottom: 4px solid rgb(88,139,218);}
+header ul li a{color: black;text-decoration: none;}
+a:hover{text-decoration: none;}
+#app .tel{position:relative;font-size:85%;height:25px;line-height:25px;width: 100%;background: rgba(247,247,247,1);box-sizing: border-box;border-top:1px solid rgb(237,237,237);}
+#app .tel .info{position: absolute;color: rgb(108,108,108);}
+#app .tel .i_1{left: 7%;}
+#app .tel .i_2{right: 16%;}
+#app .tel .i_3{right: 9%;color: rgb(102,174,249);}
+
